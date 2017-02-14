@@ -23,6 +23,10 @@ public class EnviadorParaTopico {
 			
 			while(sc.hasNextLine()){
 				String line = sc.nextLine();
+				if("veloso".equals(line))
+					producer.setProperty("formato",	"ebook");
+				else
+					producer.setProperty("formato",	"");
 				producer.send(topic, line);
 			}
 			sc.close();

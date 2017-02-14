@@ -24,7 +24,7 @@ public class RegistraFinanceiroNoTopico {
 			context.setClientID("Financeiro");
 
 			JMSConsumer consumer = context
-					.createDurableConsumer(topic, "Assinanaturas");
+					.createDurableConsumer(topic, "Assinanaturas", "formato='ebook'", false);
 			consumer.setMessageListener(new TratadorDeMensagem());
 			
 			JMSConsumer consumerNf = context
